@@ -1,4 +1,5 @@
 package tickets;
 
-public class keepthis {
+public class keepthis
+{
 }
