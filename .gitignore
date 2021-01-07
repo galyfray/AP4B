@@ -28,3 +28,4 @@ hs_err_pid*
 # graddle files
 .gradle/
 gradle/wrapper/gradle-wrapper.jar
+.DS_Store
