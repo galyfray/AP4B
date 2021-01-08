@@ -96,6 +96,11 @@ dependencies {
     runtimeOnly "org.lwjgl:lwjgl-zstd::$lwjglNatives"
 }
 
+jar {
+    manifest {
+        attributes 'Main-Class': 'tickets.Main'
+    }
+}
 
 application {
     mainClassName = 'tickets.Main'
