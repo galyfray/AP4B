@@ -34,7 +34,7 @@ public class LancementPartie extends JPanel implements ActionListener
         presentation.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
-        /*btn1.addActionListener(new ActionListener(this));
+        btn1.addActionListener(new ActionListener(this)
         {
             @Override
             public void actionPerformed(ActionEvent e)
@@ -43,7 +43,7 @@ public class LancementPartie extends JPanel implements ActionListener
                 this.SetVisible(false);
             }
 
-        }*/
+        });
 
     }
 
