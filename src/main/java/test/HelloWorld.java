@@ -1,15 +1,15 @@
 package test;
 
-import uv.Destination;
-import uv.Road;
-import uv.UV;
+import tickets.uv.Destination;
+import tickets.uv.Road;
+import tickets.uv.UV;
 
 import java.util.List;
 
 public class HelloWorld
 {
 
-    public static void main( String[] args )
+    public void test( String[] args )
     {
         UV LP24 = new UV("LP24"), LO21 = new UV("LO21"), AP4B = new UV("AP4B"), AP4A = new UV("AP4A");
         Road ll = new Road(LO21, LP24);

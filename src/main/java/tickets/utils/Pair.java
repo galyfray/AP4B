@@ -1,4 +1,4 @@
-package utils;
+package tickets.utils;
 
 public class Pair<K, E>
 {
