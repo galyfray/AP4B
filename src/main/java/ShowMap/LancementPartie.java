@@ -1,6 +1,8 @@
 package ShowMap;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
 
@@ -32,7 +34,7 @@ public class LancementPartie extends JPanel implements ActionListener
         presentation.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
-        btn1.addActionListener(new ActionListener(this));
+        /*btn1.addActionListener(new ActionListener(this));
         {
             @Override
             public void actionPerformed(ActionEvent e)
@@ -41,9 +43,14 @@ public class LancementPartie extends JPanel implements ActionListener
                 this.SetVisible(false);
             }
 
-        }
+        }*/
 
     }
 
+    @Override
+    public void actionPerformed( ActionEvent actionEvent )
+    {
+
+    }
 }
 
