@@ -1,16 +1,17 @@
 package tickets;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Turn
 {
-    public final List<Player> players;
+    public final ArrayList<Player> players = new ArrayList<>();
     private int playerNumber;
     private int turnLeft = -1;
 
     public Turn( List<Player> players )
     {
-        this.players = List.copyOf(players);
+        this.players.addAll(players);
         playerNumber = 0;
     }
 
