@@ -27,7 +27,7 @@ public class Frame extends JFrame
         JButton btn2 = new JButton("Reprendre une partie en cours");
 
         startPanel.add(btn1);
-        startPanel.add(btn2);
+        //startPanel.add(btn2);
 
         Boutons boutons = new Boutons();
 
