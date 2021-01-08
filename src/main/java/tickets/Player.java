@@ -63,6 +63,6 @@ public class Player
 
     public boolean hasCredits( Credit type, int number )
     {
-        return credits.get(type) >= number;
+        return credits.getOrDefault(type, 0) >= number;
     }
 }
