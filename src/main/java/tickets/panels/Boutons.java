@@ -1,8 +1,12 @@
 package tickets.panels;
 
 import tickets.*;
+import tickets.uv.Road;
 
 import javax.swing.*;
+import java.util.ArrayList;
+
+import static tickets.Main.ROADS;
 
 public class Boutons extends JMenuBar
 {
@@ -22,15 +26,21 @@ public class Boutons extends JMenuBar
         passerSonTourBoutton.addActionListener(e -> passerSonTour());
 
         //Faire un loop pour lister toutes les routes dispo en fonction du joueur
-            JMenuItem route1 = new JMenuItem("Route 1");
-            route1.addActionListener(e -> prendreUneRoute());
-            prendreUneRouteMenu.add(route1);
             /*for (Player joueur : PLAYERS)
             {
                 joueur.ownedRoads
              }*/
 
-        //joueurEnCours.update
+        // Initialisation des boutons routes
+
+
+        for (Road route : ROADS)
+        {
+            String boutonTextRoute = "Route de " + route.start.name + " à " + route.end.name;
+            JMenuItem boutonRoute = new JMenuItem(boutonTextRoute);
+            boutonRoute.addActionListener(e -> prendreUneRoute(route));
+            prendreUneRouteMenu.add(boutonRoute);
+        }
 
         this.add(actions);
         actions.add(passerSonTourBoutton);
@@ -40,9 +50,15 @@ public class Boutons extends JMenuBar
         joueurEnCours.add(creditsBouton);
     }
 
-    public void prendreUneRoute()
+    public void prendreUneRoute(Road route)
     {
-        // Mettre à joueur actuel en fonction de la route qu'il prend.
+        Player player = turn.getCurrentPlayer();
+        if( player.removeCredits(road.type, road.cost) && !Player.getAllOwnedRoad().contains(road) )
+        {
+            player.ownedRoads.add(road);
+            Frame.MAP_PANEL.images.add(road.imageIcon);
+            Frame.INSTANCE.repaint();
+        }
     }
 
     public void passerSonTour()
