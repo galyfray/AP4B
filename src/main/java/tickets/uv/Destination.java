@@ -1,6 +1,6 @@
-package uv;
+package tickets.uv;
 
-import utils.Pair;
+import tickets.utils.Pair;
 
 import java.util.ArrayList;
 import java.util.HashSet;

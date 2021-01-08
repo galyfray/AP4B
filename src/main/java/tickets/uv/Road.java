@@ -1,4 +1,4 @@
-package uv;
+package tickets.uv;
 
 import java.util.List;
 import java.util.Objects;
