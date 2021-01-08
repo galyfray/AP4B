@@ -33,7 +33,7 @@ public class Turn
 
         playerNumber++;
 
-        if( playerNumber > players.size() )
+        if( playerNumber == players.size() )
         {
             playerNumber = 0;
         }
