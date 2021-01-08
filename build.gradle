@@ -96,5 +96,10 @@ dependencies {
     runtimeOnly "org.lwjgl:lwjgl-zstd::$lwjglNatives"
 }
 
+
+application {
+    mainClassName = 'tickets.Main'
+}
+
 group 'utbm.ap4b'
 version '1.0-SNAPSHOT'
