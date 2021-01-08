@@ -33,5 +33,17 @@ public class Main
         Player p1 = new Player("Joueur 1"), p2 = new Player("Joueur 2");
         PLAYERS.addAll(List.of(p1, p2));
 
+        p1.addCredits(Credit.CS, 4);
+        p2.addCredits(Credit.CS, 3);
+
+        p1.addCredits(Credit.TM, 2);
+        p2.addCredits(Credit.TM, 3);
+
+        p1.addCredits(Credit.EC, 3);
+        p2.addCredits(Credit.EC, 2);
+
+        p1.addCredits(Credit.OM, 3);
+        p2.addCredits(Credit.QC, 2);
+
     }
 }
