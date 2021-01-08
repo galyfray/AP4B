@@ -4,7 +4,7 @@ import tickets.utils.Pair;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
+import java.util.Set;
 
 public class Destination
 {
@@ -17,10 +17,10 @@ public class Destination
     }
 
     /**
-     * @param roads list of roads that should be used to check if the two UVs are linked.
+     * @param roads set of roads that should be used to check if the two UVs are linked.
      * @return true if destination's UVs are linked false otherwise.
      */
-    public boolean isComplete( List<Road> roads )
+    public boolean isComplete( Set<Road> roads )
     {
         ArrayList<Road> startList = new ArrayList<>();
         ArrayList<Road> endList = new ArrayList<>();
@@ -79,7 +79,7 @@ public class Destination
 
     }
 
-    private Pair<Boolean, ArrayList<UV>> partialComplete( List<Road> roads, ArrayList<UV> checked )
+    private Pair<Boolean, ArrayList<UV>> partialComplete( Set<Road> roads, ArrayList<UV> checked )
     {
         ArrayList<Road> startList = new ArrayList<>();
         ArrayList<Road> endList = new ArrayList<>();
