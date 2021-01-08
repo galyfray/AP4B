@@ -50,7 +50,7 @@ public class Boutons extends JMenuBar
         joueurEnCours.add(creditsBouton);
     }
 
-    public void prendreUneRoute(Road route)
+    public void prendreUneRoute(Road road)
     {
         Player player = turn.getCurrentPlayer();
         if( player.removeCredits(road.type, road.cost) && !Player.getAllOwnedRoad().contains(road) )
