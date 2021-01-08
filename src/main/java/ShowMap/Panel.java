@@ -11,13 +11,25 @@ import javax.swing.JComponent;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Toolkit;
-
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Panel extends JPanel
 {
     Panel()
     {
-        this.add(new JButton("Commencer la partie"));
+        JButton commencer = new JButton("Commencer la partie");
+        this.add(commencer);
+
+        commencer.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed( ActionEvent e )
+            {
+                JOptionPane.showMessageDialog(null,"La partie commence, bonne chance");
+            }
+        });
+
     }
 
     @Override

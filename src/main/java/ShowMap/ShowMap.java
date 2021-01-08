@@ -112,10 +112,16 @@ public class ShowMap extends JPanel
                     carte.setVisible(true);
 
                     JPanel panelmap = new JPanel();
+
                     carte.add(panelmap);
+
                     carte.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 }
             });
+
+
+
+
 
         }
 }
