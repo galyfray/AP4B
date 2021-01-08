@@ -9,6 +9,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JComponent;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.Toolkit;
 
 /*
 public class ShowMap extends JPanel
@@ -72,59 +76,48 @@ public class ShowMap extends JPanel
         // g.drawImage(img2, 0, 0, this);
 
     }
-*/
-
-
-    public void map()
-    {
-
-        JFrame lancement = new JFrame("Preparation");
-       // lancement.getContentPane().add(new ShowMap());
-
-        lancement.setBounds(500,400,1280,720);
-        lancement.setVisible(true);
-        lancement.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JPanel panel2 = new JPanel();
-
-        JLabel annonce = new JLabel("Voici la carte de la partie," +
-                " le joueur qui a le plus grand nombre de routes a la fin gagne la partie." +
-                "Vous commencez avec le meme nombre de wagons et le but est d'en placer un maximum",JLabel.CENTER);
-
-        lancement.add(annonce);
-        JButton btnok = new JButton("D'accord");
-        btnok.setSize(1,1);
-        lancement.setLayout(new GridLayout(2, 1));
-        panel2.add(btnok);
-        lancement.add(panel2);
-
-
-        btnok.addActionListener(new ActionListener()
+*/        public void map()
         {
-            @Override
-            public void actionPerformed(ActionEvent e){
 
+            JFrame lancement = new JFrame("Preparation");
+            // lancement.getContentPane().add(new ShowMap());
 
-                JFrame carte = new JFrame("Carte de la partie");
-                carte.getContentPane().add(new ShowMap());
+            lancement.setBounds(500, 400, 1280, 720);
+            lancement.setVisible(true);
+            lancement.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            JPanel panel2 = new JPanel();
 
-                carte.setBounds(500,400,1280,720);
-                carte.setVisible(true);
+            JLabel annonce = new JLabel("Voici la carte de la partie," +
+                    " le joueur qui a le plus grand nombre de routes a la fin gagne la partie." +
+                    "Vous commencez avec le meme nombre de wagons et le but est d'en placer un maximum", JLabel.CENTER);
 
-                carte.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                JButton commencer = new JButton("Commencez la partie");
-                commencer.setSize(1,1);
-                carte.add(commencer);
+            lancement.add(annonce);
+            JButton btnok = new JButton("D'accord");
+            btnok.setSize(1, 1);
+            lancement.setLayout(new GridLayout(2, 1));
+            panel2.add(btnok);
+            lancement.add(panel2);
 
-            }
-        });
+            btnok.addActionListener(new ActionListener()
+            {
+                @Override
+                public void actionPerformed( ActionEvent e )
+                {
 
+                    JFrame carte = new JFrame("Carte de la partie");
+                    carte.getContentPane().add(new ShowMap());
+                    carte.getContentPane().add(new Panel());
 
+                    carte.setBounds(500, 400, 1280, 720);
+                    carte.setVisible(true);
 
+                    JPanel panelmap = new JPanel();
+                    carte.add(panelmap);
+                    carte.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                }
+            });
 
-
-
-
-    }
+        }
 }
 
 
