@@ -17,7 +17,6 @@ public class Main
 
     public static void main( String[] args )
     {
-        Frame.INSTANCE.build();
 
         UV RE = new UV("RE4E"), IA = new UV("IA41"), SY = new UV("SY41"), AP = new UV("AP4A"), RS = new UV("RS40"), ST = new UV("STAGE"), IT = new UV("IT43");
         UVS.addAll(List.of(RE, IA, SY, AP, RS, ST, IT));
@@ -44,6 +43,8 @@ public class Main
 
         p1.addCredits(Credit.OM, 3);
         p2.addCredits(Credit.QC, 2);
+
+        Frame.INSTANCE.build();
 
     }
 }
