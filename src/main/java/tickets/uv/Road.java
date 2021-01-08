@@ -6,11 +6,15 @@ import java.util.Objects;
 public class Road
 {
     public final UV start, end;
+    public final Credit type;
+    public final int cost;
 
-    public Road( UV start, UV end )
+    public Road( UV start, UV end, Credit type, int cost )
     {
         this.end = end;
         this.start = start;
+        this.type = type;
+        this.cost = cost;
     }
 
     public boolean contain( UV uv )

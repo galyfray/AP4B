@@ -1,10 +1,6 @@
 package test;
 
-import tickets.uv.Destination;
-import tickets.uv.Road;
 import tickets.uv.UV;
-
-import java.util.List;
 
 public class HelloWorld
 {
@@ -12,7 +8,7 @@ public class HelloWorld
     public void test( String[] args )
     {
         UV LP24 = new UV("LP24"), LO21 = new UV("LO21"), AP4B = new UV("AP4B"), AP4A = new UV("AP4A");
-        Road ll = new Road(LO21, LP24);
+        /*Road ll = new Road(LO21, LP24);
         Road la = new Road(LO21, AP4A);
         Road lab = new Road(LO21, AP4B);
         Road aa = new Road(AP4A, AP4B);
@@ -20,7 +16,7 @@ public class HelloWorld
 
         Destination linearLong = new Destination(LP24, AP4B);
 
-        System.out.println(linearLong.isComplete(List.of(aa, ll)));
+        System.out.println(linearLong.isComplete(List.of(aa, ll)));*/
 
     }
 
