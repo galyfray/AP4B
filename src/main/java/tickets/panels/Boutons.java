@@ -1,16 +1,22 @@
 package tickets.panels;
 
-import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.event.*;
 
 public class Boutons extends JMenuBar
 {
     public Boutons()
     {
-        JMenu menu = new JMenu("Jouer");
-        JMenuItem m1 = new JMenuItem("MenuItem1");
-        menu.add(m1);
+        JMenu actions = new JMenu("Actions");
+        this.add(actions);
 
-        this.add(menu);
+        JMenuItem passerSonTourBoutton = new JMenuItem("Passer son tour");
+        actions.add(passerSonTourBoutton);
+        passerSonTourBoutton.addActionListener(e -> System.out.println("Bonjour!"));
+
+        JMenuItem prendreUneRouteBoutton = new JMenuItem("Prendre une route");
+        actions.add(prendreUneRouteBoutton);
     }
 }
