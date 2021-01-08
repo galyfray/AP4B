@@ -19,7 +19,7 @@ public class Player
 
     public void addCredits( Credit type, int number )
     {
-        credits.put(type, credits.get(type) + number);
+        credits.put(type, credits.getOrDefault(type, 0) + number);
     }
 
     public boolean removeCredits( Credit type, int number )
