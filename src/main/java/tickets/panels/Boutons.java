@@ -1,57 +1,60 @@
 package tickets.panels;
 
-import tickets.Turn;
-import tickets.uv.Credit;
+import tickets.*;
 
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.event.*;
 
 public class Boutons extends JMenuBar
 {
+    public Turn turn = new Turn(tickets.Player.getPlayers());
+    public JMenu actions = new JMenu("Actions");
+    public JMenuItem passerSonTourBoutton = new JMenuItem("Passer son tour");
+    public JMenu prendreUneRouteMenu = new JMenu("Prendre une route");
+    public JMenu joueurEnCours = new JMenu("Infos joueur");
+    public String nomDuJoueurEnCours = turn.getCurrentPlayer().name;
+    public JMenuItem affichageJoueur = new JMenuItem(nomDuJoueurEnCours);
+    public String CreditsPossedes = "Crédits possédés : " + turn.getCurrentPlayer().getCreditSum();
+    public JMenuItem creditsBouton = new JMenuItem(CreditsPossedes);
+
     public Boutons()
     {
-        JMenu actions = new JMenu("Actions");
-        this.add(actions);
 
-        JMenuItem passerSonTourBoutton = new JMenuItem("Passer son tour");
-        actions.add(passerSonTourBoutton);
-        passerSonTourBoutton.addActionListener(e -> System.out.println("Bonjour!"));
+        passerSonTourBoutton.addActionListener(e -> passerSonTour());
 
-        JMenu prendreUneRouteMenu = new JMenu("Prendre une route");
         //Faire un loop pour lister toutes les routes dispo en fonction du joueur
-        JMenuItem route1 = new JMenuItem("Route 1");
-        route1.addActionListener(e -> prendreUneRoute());
-        prendreUneRouteMenu.add(route1);
+            JMenuItem route1 = new JMenuItem("Route 1");
+            route1.addActionListener(e -> prendreUneRoute());
+            prendreUneRouteMenu.add(route1);
+            /*for (Player joueur : PLAYERS)
+            {
+                joueur.ownedRoads
+             }*/
 
+        //joueurEnCours.update
 
-
-        actions.add(prendreUneRouteMenu);
-        //actions.add(prendreUneRouteBoutton);
-
-        JMenu joueurEnCours = new JMenu("Infos joueur");
+        this.add(actions);
+        actions.add(passerSonTourBoutton);
         this.add(joueurEnCours);
-
-        JMenuItem affichageJoueur = new JMenuItem("Nom du joueur");
         joueurEnCours.add(affichageJoueur);
-
-        JMenuItem creditsBouton = new JMenuItem("Crédits possédés : Afficher le nombre de crédits");
+        actions.add(prendreUneRouteMenu);
         joueurEnCours.add(creditsBouton);
-
-        //Turn tour;
-        //tour.getCurrentPlayer();
-
     }
 
     public void prendreUneRoute()
     {
-
         // Mettre à joueur actuel en fonction de la route qu'il prend.
     }
 
     public void passerSonTour()
     {
+        if (turn.next())
+        {
+            nomDuJoueurEnCours = turn.getCurrentPlayer().name;
+            affichageJoueur.setText(nomDuJoueurEnCours);
+
+            CreditsPossedes = "Crédits possédés : " + turn.getCurrentPlayer().getCreditSum();
+            creditsBouton.setText(CreditsPossedes);
+        }
         // Mettre tous les boutons à jour:
         // - Infos joueur (Nom du joueur, Crédits du joueur)
     }
