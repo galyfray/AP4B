@@ -17,7 +17,7 @@ public class MapPanel extends JPanel
     @Override
     protected void paintComponent( Graphics g )
     {
-        ImageIcon image_background = new ImageIcon(getClass().getResource("Map INFO.png"));
+        ImageIcon image_background = new ImageIcon(getClass().getResource("/Map INFO.png"));
         g.drawImage(image_background.getImage(), 0, 0, getWidth(), getHeight(), this);
         g.setColor(Color.BLACK);
         g.drawRect(0, 0, getWidth(), getHeight());
