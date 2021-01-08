@@ -1,6 +1,7 @@
 package tickets;
 
 import tickets.panels.MapPanel;
+import tickets.panels.Boutons;
 
 import javax.swing.*;
 import java.awt.*;
@@ -28,6 +29,7 @@ public class Frame extends JFrame
         startPanel.add(btn2);
 
         MapPanel mapPanel = new MapPanel();
+        Boutons boutons = new Boutons();
 
         this.setLayout(new GridLayout(2, 1));
         this.getContentPane().add(startPanel);
@@ -43,6 +45,7 @@ public class Frame extends JFrame
         {
             System.out.println("called");
             Frame.INSTANCE.setContentPane(mapPanel);
+            Frame.INSTANCE.setJMenuBar(boutons);
             Frame.INSTANCE.pack();
         });
     }

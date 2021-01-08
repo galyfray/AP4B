@@ -9,9 +9,7 @@ public class MapPanel extends JPanel
     {
         JButton commencer = new JButton("Commencer la partie");
         this.add(commencer);
-
         commencer.addActionListener(e -> JOptionPane.showMessageDialog(null, "La partie commence, bonne chance"));
-
     }
 
     @Override
