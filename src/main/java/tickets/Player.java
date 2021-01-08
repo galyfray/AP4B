@@ -32,6 +32,16 @@ public class Player
         return true;
     }
 
+    public int getCreditSum()
+    {
+        int sum = 0;
+        for( int i : credits.values() )
+        {
+            sum += i;
+        }
+        return sum;
+    }
+
     public boolean hasCredits( Credit type, int number )
     {
         return credits.get(type) >= number;
