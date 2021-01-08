@@ -27,6 +27,7 @@ public class Panel extends JPanel
             public void actionPerformed( ActionEvent e )
             {
                 JOptionPane.showMessageDialog(null,"La partie commence, bonne chance");
+
             }
         });
 
