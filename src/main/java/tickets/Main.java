@@ -49,6 +49,9 @@ public class Main
         p1.addCredits(Credit.OM, 3);
         p2.addCredits(Credit.QC, 2);
 
+        p1.destinations.add(dest2);
+        p2.destinations.add(dest1);
+
         Frame.INSTANCE.build();
 
     }

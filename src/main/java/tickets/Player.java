@@ -1,6 +1,7 @@
 package tickets;
 
 import tickets.uv.Credit;
+import tickets.uv.Destination;
 import tickets.uv.Road;
 
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ public class Player
     public final HashSet<Road> ownedRoads = new HashSet<>();
     private final HashMap<Credit, Integer> credits = new HashMap<>();
     private static final ArrayList<Player> PLAYERS = new ArrayList<>();
+    public final HashSet<Destination> destinations = new HashSet<>();
 
     public Player( String name )
     {
