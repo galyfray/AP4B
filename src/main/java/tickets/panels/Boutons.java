@@ -25,15 +25,6 @@ public class Boutons extends JMenuBar
 
         passerSonTourBoutton.addActionListener(e -> passerSonTour());
 
-        //Faire un loop pour lister toutes les routes dispo en fonction du joueur
-            /*for (Player joueur : PLAYERS)
-            {
-                joueur.ownedRoads
-             }*/
-
-        // Initialisation des boutons routes
-
-
         for (Road route : ROADS)
         {
             String boutonTextRoute = "Route de " + route.start.name + " à " + route.end.name;
@@ -58,6 +49,8 @@ public class Boutons extends JMenuBar
             player.ownedRoads.add(road);
             Frame.MAP_PANEL.images.add(road.imageIcon);
             Frame.INSTANCE.repaint();
+            CreditsPossedes = "Crédits possédés : " + turn.getCurrentPlayer().getCreditSum();
+            creditsBouton.setText(CreditsPossedes);
         }
     }
 
