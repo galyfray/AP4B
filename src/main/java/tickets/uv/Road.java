@@ -1,5 +1,6 @@
 package tickets.uv;
 
+import javax.swing.*;
 import java.util.List;
 import java.util.Objects;
 
@@ -8,13 +9,15 @@ public class Road
     public final UV start, end;
     public final Credit type;
     public final int cost;
+    public final ImageIcon imageIcon;
 
-    public Road( UV start, UV end, Credit type, int cost )
+    public Road( UV start, UV end, Credit type, int cost, ImageIcon imageIcon )
     {
         this.end = end;
         this.start = start;
         this.type = type;
         this.cost = cost;
+        this.imageIcon = imageIcon;
     }
 
     public boolean contain( UV uv )
