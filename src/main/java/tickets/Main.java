@@ -11,7 +11,6 @@ import java.util.List;
 public class Main
 {
     public static final ArrayList<UV> UVS = new ArrayList<>();
-    public static final ArrayList<Player> PLAYERS = new ArrayList<>();
     public static final ArrayList<Destination> DESTINATIONS = new ArrayList<>();
     public static final ArrayList<Road> ROADS = new ArrayList<>();
 
@@ -30,7 +29,6 @@ public class Main
         DESTINATIONS.addAll(List.of(dest1, dest2));
 
         Player p1 = new Player("Joueur 1"), p2 = new Player("Joueur 2");
-        PLAYERS.addAll(List.of(p1, p2));
 
         p1.addCredits(Credit.CS, 4);
         p2.addCredits(Credit.CS, 3);
