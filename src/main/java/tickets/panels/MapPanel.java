@@ -10,9 +10,6 @@ public class MapPanel extends JPanel
 
     public MapPanel()
     {
-        JButton commencer = new JButton("Commencer la partie");
-        this.add(commencer);
-        commencer.addActionListener(e -> JOptionPane.showMessageDialog(null, "La partie commence, bonne chance"));
         images.add(new ImageIcon(getClass().getResource("/Map INFO.png")));
     }
 

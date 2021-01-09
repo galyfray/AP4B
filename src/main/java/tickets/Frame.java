@@ -19,7 +19,7 @@ public class Frame extends JFrame
     {
         this.setName("Lancement");
 
-        JLabel text = new JLabel("Bienvenue dans le menu de lancement des Aventuriers du Rail", JLabel.CENTER);
+        JLabel text = new JLabel("Bienvenue dans le menu de lancement de Ticket To UTBM", JLabel.CENTER);
         this.add(text);
 
         JPanel startPanel = new JPanel();

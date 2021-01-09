@@ -63,6 +63,11 @@ public class Player
         return List.copyOf(PLAYERS);
     }
 
+    public HashMap<Credit, Integer> getCredits()
+    {
+        return credits;
+    }
+
     public boolean hasCredits( Credit type, int number )
     {
         return credits.getOrDefault(type, 0) >= number;
