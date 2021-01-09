@@ -12,6 +12,7 @@ import java.util.List;
 public class Player
 {
     public final String name;
+    public int score = 0;
     public final HashSet<Road> ownedRoads = new HashSet<>();
     private final HashMap<Credit, Integer> credits = new HashMap<>();
     private static final ArrayList<Player> PLAYERS = new ArrayList<>();

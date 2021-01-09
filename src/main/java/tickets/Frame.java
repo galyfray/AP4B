@@ -24,10 +24,8 @@ public class Frame extends JFrame
 
         JPanel startPanel = new JPanel();
         JButton btn1 = new JButton("Nouvelle partie");
-        JButton btn2 = new JButton("Reprendre une partie en cours");
 
         startPanel.add(btn1);
-        //startPanel.add(btn2);
 
         Boutons boutons = new Boutons();
 

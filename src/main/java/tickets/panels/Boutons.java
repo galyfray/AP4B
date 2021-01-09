@@ -1,13 +1,10 @@
 package tickets.panels;
 
 import tickets.*;
-import tickets.uv.Credit;
 import tickets.uv.Road;
 import tickets.uv.Destination;
 
 import javax.swing.*;
-import java.util.ArrayList;
-import java.util.HashMap;
 
 import static tickets.Main.ROADS;
 
@@ -29,6 +26,9 @@ public class Boutons extends JMenuBar
     public String AffichageDestinations = "Destination du joueur : ";
     public JMenuItem destinationsSousBoutton = new JMenuItem(AffichageDestinations);
 
+    /**
+     * classe publique Boutons qui sert à générer les boutons en haut de la fenêtre.
+     */
     public Boutons()
     {
 
@@ -58,7 +58,11 @@ public class Boutons extends JMenuBar
         joueurEnCours.add(creditsBouton);
         joueurEnCours.add(RoutesPrisesBouton);
     }
-
+    /**
+     * @param road route que le joueur choisi.
+     * On va vérifier si le joueur peut prendre la route cliquée, et si oui on affiche la nouvelle
+     * carte adaptée avec le choix de route. De même, on mettra toutes les infos à jour.
+     */
     public void prendreUneRoute(Road road)
     {
         Player player = turn.getCurrentPlayer();
@@ -86,6 +90,10 @@ public class Boutons extends JMenuBar
         }
     }
 
+    /**
+     * Permet de passer son tour. On mettra à jour toutes les données nécessaires dans le menu pour le
+     * prochain joueur. Aussi, on vérifiera si on est en fin de jeu ou non.
+     */
     public void passerSonTour()
     {
         if (turn.next())
@@ -116,7 +124,45 @@ public class Boutons extends JMenuBar
             }
             destinationsSousBoutton.setText(AffichageDestinations);
         }
-        // Mettre tous les boutons à jour:
-        // - Infos joueur (Nom du joueur, Crédits du joueur)
+        else
+        {
+            finDePartie();
+        }
+    }
+
+    /**
+     * Fonction de fin de partie qui s'active dès que le jeu se termine.
+     * À ce moment là, on compte tous les points : routes prises + carte destinations terminées.
+     */
+    public void finDePartie()
+    {
+        String msgFinPartie = "Fin de partie !\n";
+        for (Player joueur : tickets.Player.getPlayers())
+        {
+            for (Road route : joueur.ownedRoads)
+            {
+                if (route.cost == 2)
+                {
+                    joueur.score += 2;
+                }
+                else if (route.cost == 3)
+                {
+                    joueur.score += 4;
+                }
+            }
+            for (Destination destinationtest : joueur.destinations)
+            {
+                if(destinationtest.isComplete(joueur.ownedRoads))
+                {
+                    joueur.score += 6;
+                }
+                else
+                {
+                    joueur.score -= 6;
+                }
+            }
+            msgFinPartie += "Score de " + joueur.name + " : " + joueur.score + "\n";
+        }
+        JOptionPane.showMessageDialog(null, msgFinPartie);
     }
 }
